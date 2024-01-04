@@ -45,7 +45,8 @@ export class SocketService {
     private userService: UserService,
     private toastService: ToastService
   ) {
-    this.tcpSocket = io(environment.serverRemote);
+    // this.tcpSocket = io(environment.serverRemote);
+    this.tcpSocket = io('localhost:3000');
 
     const accessTokenString = localStorage.getItem('access_token') ?? '';
     if (accessTokenString) {
